@@ -1,0 +1,964 @@
+@font-face {
+    font-family: "PP Rader";
+    src: url("../assets/PPRader-Regular.otf");
+}
+
+/* style page d'accueil*/
+.accueil__body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: background-color 1s ease-in-out;
+    cursor: none !important;
+    position: relative;
+}
+
+/* style page carte*/
+body {
+    background-color: #dcdbd1;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* effet fadein couleur saisons/fleurs */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.svg__size--fadein {
+    animation-name: fadeIn;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+}
+
+/* effet fadein nuit */
+@keyframes fadeInNight {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+#fadeInNight {
+    animation-name: fadeInNight;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+}
+
+/* efft fadein étoiles */
+@keyframes fadeInStars {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#fadeInStar {
+    animation-name: fadeInStars;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+}
+
+/* style cartes*/
+.card {
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    transition: all .32s ease;
+}
+
+/* effet hover cartes */
+.card:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* style container cartes */
+.container__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* style frame cartes */
+.card__frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+    padding: 19vh 15vw;
+    border: 2px solid #7E3328;
+    border-radius: 48px;
+}
+
+/* style listes cartes*/
+.card__list {
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* style puces cartes */
+.card__item {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 200px;
+}
+
+/* style images cartes */
+.card__item img {
+    display: block;
+    width: 100%;
+}
+
+/* style titre cartes */
+.card__title {
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 0;
+    border: solid 2px #000;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Roboto Slab;
+    font-weight: bold;
+    background-color: rgba(250, 248, 235, 0.5);
+}
+
+/* style container accueil */
+.accueil {
+    position: fixed;
+    z-index: 4;
+    top: 20px;
+    right: 20px;
+}
+
+/* style image couleur saisons/fleurs */
+.svg__size {
+    display: flex;
+    width: 77.5vw;
+    height: auto;
+}
+
+/* style container été */
+.containerete {
+    z-index: 1;
+    position: absolute;
+}
+
+/* style container hiver */
+.containerhiver {
+    z-index: 1;
+    position: absolute;
+}
+
+/* style container printemps */
+.containerprintemps {
+    z-index: 1;
+    position: absolute;
+}
+
+/* style container automne */
+.containerautomne {
+    z-index: 1;
+    position: absolute;
+}
+
+/* style container tulipe */
+.containertulipe {
+    z-index: 2;
+    position: absolute;
+}
+
+/* style container pensee */
+.containerpensee {
+    z-index: 2;
+    position: absolute;
+}
+
+/* style container tournesol */
+.containertournesol {
+    z-index: 2;
+    position: absolute;
+}
+
+/* style container geranium */
+.containergeranium {
+    z-index: 2;
+    position: absolute;
+}
+
+/* style container perceneige */
+.containerperceneige {
+    z-index: 2;
+    position: absolute;
+}
+
+/* style titre accueil */
+.accueil__title {
+    font-size: 250px;
+    color: #728B63;
+    margin: 0;
+    font-family: "PP Rader";
+}
+
+/* style sous-titre accueil */
+.accueil__subtitle {
+    font-size: 40px;
+    color: #371611;
+    margin-top: -5%;
+    font-family: Roboto Slab;
+    text-align: end;
+}
+
+/* style bouton accueil */
+#accueil__button {
+    position: fixed;
+    background: #f0efe8;
+    border: 1px solid #371611;
+    border-radius: 10px;
+    padding: 20px;
+    /*taille bouton*/
+    font-size: 0.9em;
+    color: #371611;
+    box-shadow: 4px 4px 0px 0px #371611;
+    font-family: Roboto Slab;
+    font-weight: 1000;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: all 300ms ease-in-out;
+    right: 125px;
+}
+
+/* effet hover bouton accueil */
+#accueil__button:hover {
+    right: 121px;
+    box-shadow: 0 0 0 0 white;
+}
+
+/* style bouton restart */
+#restart__button {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    bottom: 30px;
+    right: 30px;
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background: #f0efe8;
+    border: 2px solid #371611;
+    color: #371611;
+    font-family: Roboto Slab;
+    box-shadow: 4px 4px 0px 0px #371611;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+/* effet hover bouton restart */
+#restart__button:hover {
+    box-shadow: 0 0 0 0 #6E6D89;
+}
+
+/* taille ligne verte */
+Path.greenLine {
+    stroke-dasharray: 1791;
+    fill: none;
+}
+
+/* animation ligne verte */
+path.greenLine.play-animation {
+    animation: indy 10s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+/* taille ligne rouge */
+Path.redLine {
+    stroke-dasharray: 3530;
+    fill: none;
+}
+
+/* animation ligne rouge */
+path.redLine.play-animation {
+    animation: indy2 10s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+/* taille ligne bleue */
+Path.blueLine {
+    stroke-dasharray: 1977;
+    fill: none;
+}
+
+/* animation ligne bleue */
+path.blueLine.play-animation {
+    animation: indy3 10s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+/* taille ligne jaune */
+Path.yellowLine {
+    stroke-dasharray: 4053;
+    fill: none;
+}
+
+/* animation ligne jaune */
+path.yellowLine.play-animation {
+    animation: indy4 10s ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes indy {
+    from {
+        stroke-dashoffset: 1791;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes indy2 {
+    from {
+        stroke-dashoffset: 3530;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes indy3 {
+    from {
+        stroke-dashoffset: 1977;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes indy4 {
+    from {
+        stroke-dashoffset: 4053;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+#tulipe {
+    z-index: 1;
+}
+
+#tournesol {
+    z-index: 1;
+}
+
+#geranium {
+    z-index: 1;
+}
+
+#perce_neige {
+    z-index: 1;
+}
+
+#pensee {
+    z-index: 1;
+}
+
+/* style container svg */
+.container__svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    aspect-ratio: 1920 / 1080;
+    height: auto;
+    pointer-events: none;
+}
+
+/* style à tout les enfants de container svg */
+.container__svg> * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* style svg relié aux cartes */
+.svg__card {
+    display: none;
+}
+
+/* style images contenue dans container svg */
+.container__svg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 46px;
+}
+
+
+/* style des id des svg */
+#vie,
+#mort,
+#tulipe,
+#tournesol,
+#geranium,
+#perce_neige,
+#pensee {
+    display: none;
+}
+
+/* style des one line */
+#svg__card--1 {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+}
+
+#svg__card--2 {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+}
+
+#svg__card--3 {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+}
+
+#svg__card--4 {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+}
+
+#svg__card--5 {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+}
+
+#svg__card--6 {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+}
+
+#svg__card--7 {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+}
+
+
+.card__frame,
+.card__list,
+.card__item,
+.card {
+    position: relative;
+    z-index: 4;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* style longueur et couleur one line */
+#vie path {
+    stroke-dasharray: 69148.5234375;
+    stroke-dashoffset: 69148.5234375;
+    transition: none;
+}
+
+#vie path.play-animation {
+    animation: drawLine 5s linear forwards;
+}
+
+#mort path {
+    stroke-dasharray: 69148.5234375;
+    stroke-dashoffset: 69148.5234375;
+    transition: none;
+}
+
+#mort path.play-animation {
+    animation: drawLine 5s linear forwards;
+}
+
+#vie path,
+#mort path {
+    transition: stroke 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#vie path.color-summer {
+    stroke: #FFC32C !important;
+}
+
+#vie path.color-spring {
+    stroke: #86BF2C !important;
+}
+
+#mort path.color-autumn {
+    stroke: #FD9F20 !important;
+}
+
+#mort path.color-winter {
+    stroke: #3379BF !important;
+}
+
+#tulipe path {
+    stroke-dasharray: 11198;
+    stroke-dashoffset: 11198;
+    transition: none;
+}
+
+#tulipe path.play-animation {
+    animation: drawLine 10s linear forwards;
+}
+
+#tulipe path {
+    transition: stroke 10s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#tulipe path.color-summer {
+    stroke: #FFC32C !important;
+}
+
+#tournesol path {
+    stroke-dasharray: 10160;
+    stroke-dashoffset: 10160;
+    transition: none;
+}
+
+#tournesol path.play-animation {
+    animation: drawLine 10s linear forwards;
+}
+
+#tournesol path {
+    transition: stroke 10s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#tournesol path.color-summer {
+    stroke: #FFC32C !important;
+}
+
+#tournesol path.color-spring {
+    stroke: #86BF2C !important;
+}
+
+#geranium path {
+    stroke-dasharray: 11060;
+    stroke-dashoffset: 11060;
+    transition: none;
+}
+
+#geranium path.play-animation {
+    animation: drawLine 10s linear forwards;
+}
+
+#geranium path {
+    transition: stroke 10s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#geranium path.color-spring {
+    stroke: #86BF2C !important;
+}
+
+#geranium path.color-autumn {
+    stroke: #FD9F20 !important;
+}
+
+#perce_neige path {
+    stroke-dasharray: 10440;
+    stroke-dashoffset: 10440;
+    transition: none;
+}
+
+#perce_neige path.play-animation {
+    animation: drawLine 10s linear forwards;
+}
+
+#perce_neige path {
+    transition: stroke 10s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#perce_neige path.color-autumn {
+    stroke: #FD9F20 !important;
+}
+
+#perce_neige path.color-winter {
+    stroke: #3379BF !important;
+}
+
+#pensee path {
+    stroke-dasharray: 16800;
+    stroke-dashoffset: 16800;
+    transition: none;
+}
+
+#pensee path.play-animation {
+    animation: drawLine 10s linear forwards;
+}
+
+#pensee path {
+    transition: stroke 10s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#pensee path.color-winter {
+    stroke: #3379BF !important;
+}
+
+.containeretoile,
+.containerete,
+.containerhiver,
+.containerprintemps,
+.containerautomne,
+.containertulipe,
+.containerpensee,
+.containertournesol,
+.containergeranium,
+.containerperceneige {
+    display: none;
+    z-index: 3;
+
+}
+
+.containernight--overlay {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.svg__size {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.svg__size--fadein {
+    animation-name: fadeIn;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+}
+
+.containernight {
+    z-index: 4;
+}
+
+.containeretoile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 74vw;
+    height: auto;
+    z-index: 2;
+}
+
+.clippyzone {
+    position: fixed;
+    left: 22px;
+    bottom: 20px;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    z-index: 5;
+}
+
+#clippy {
+    width: 90px;
+    height: auto;
+    translate: none;
+    rotate: none;
+    scale: none;
+    transform: translate(0px);
+}
+
+#clippyzone__textcontainer {
+    font-family: Roboto Slab;
+    font-size: 16px;
+    color: #371611;
+    min-height: 30px;
+    padding: 10px 10px;
+    background: #f0efe8;
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    max-width: 200px;
+    margin-bottom: 25px;
+    margin-left: 0;
+    box-shadow: 4px 4px 0px 0px #371611;
+    text-align: left;
+    word-break: break-word;
+}
+
+.cursor--custom {
+    cursor: pointer;
+    display: block;
+    border: solid 3px;
+    border-color: #880707;
+    border-radius: 24px;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    translate: -50% -50%;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    z-index: 6;
+    left: 0;
+    top: 0;
+}
+
+body,
+html,
+.container__card {
+    cursor: none !important;
+}
+
+.cursor--custom.click {
+    transform: scale(0.8);
+    background: #880707;
+    transition: transform 0.1s, background 0.1s;
+}
+
+* {
+    cursor: none !important;
+}
+
+.portrait-warning {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-portrait-warning, 10000);
+  width: 100vw;
+  height: 100vh;
+  padding: var(--spacing-page-padding, 20px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-containernight--overlay-dark, rgb(0, 0, 0));
+  color: var(--text-light, white);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.portrait-warning p {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.portrait-warning .rotate-icon-container {
+  margin-bottom: 15px;
+}
+
+.portrait-warning .rotate-arrow {
+  color: var(--color-icon-rotate, #38bdf8);
+  animation: spinDevice 2s ease-in-out infinite;
+}
+
+@keyframes spinDevice {
+  0%, 30% { transform: rotate(0deg); }
+  50%, 70% { transform: rotate(-90deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@media (orientation: portrait) {
+  #portraitWarning.portrait-warning {
+    display: flex !important;
+  }
+}
+
+/* redimenssionnement pour tablette */
+@media screen and (max-width: 900px) {
+    .accueil__title {
+        font-size: 150px; 
+    }
+    .accueil__subtitle {
+        font-size: 30px; 
+        margin-top: -3%;
+    }
+    #accueil__button {
+        right: 20px; 
+        padding: 15px;
+        font-size: 0.8em;
+    }
+    .card__frame {
+        padding: 5vh 2vw; 
+        gap: 1.5em; 
+    }
+    .card__list {
+        gap: 2em; 
+
+    }
+    .card__item {
+        flex: 0 0 150px; 
+    }
+    .card__title {
+        font-size: 1.3em;
+        padding: 8px 12px;
+    }
+    .container__svg {
+        width: 85vw;
+    }
+    .clippyzone {
+        left: 15px;
+        bottom: 15px;
+        gap: 8px;
+    }
+    #clippy {
+        width: 70px;
+    }
+    #clippyzone__textcontainer {
+        font-size: 14px;
+        max-width: 180px;
+        padding: 8px;
+    }
+    #restart__button {
+        padding: 12px;
+        font-size: 0.9em;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* redimensionnement pour téléphone */
+@media screen and (max-width: 600px) {
+    .accueil__body {
+        overflow-y: auto; 
+    }
+    .container__accueil {
+        position: static; 
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .accueil__title {
+        font-size: 80px; 
+        text-align: center;
+    }
+    .accueil__subtitle {
+        font-size: 20px; 
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    #accueil__button {
+        position: static; 
+        margin-top: 20px;
+        padding: 12px 25px;
+        font-size: 0.8em;
+        letter-spacing: 3px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container__lines svg {
+        position: static; 
+        width: 90vw; 
+        max-height: 50vh; 
+        margin-top: 20px;
+    }
+    .container__card {
+        padding: 10px; 
+        min-height: auto; 
+    }
+    .card__frame {
+        padding: 5vh 5vw;
+        gap: 1.5em;
+
+    }
+    .card__title {
+        font-size: 1.1em; 
+        padding: 8px 10px;
+    }
+    .card__list {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 1.5em;
+    }
+    .card__item {
+        flex: 0 0 80%; 
+        max-width: 280px; 
+    }
+    .container__svg {
+        width: 95vw; 
+        max-width: none; 
+        position: relative; 
+        transform: none;
+        top: auto;
+        left: auto;
+        margin: 20px auto;
+    }
+
+    .container__svg img {
+        border-radius: 24px; 
+    }
+    .clippyzone {
+        left: 10px;
+        bottom: 10px;
+        gap: 5px;
+        padding-bottom: 50px;
+    }
+    #clippy {
+        width: 50px;
+    }
+    #clippyzone__textcontainer {
+        font-size: 12px;
+        max-width: 120px;
+        padding: 6px;
+        border-radius: 10px;
+    }
+    #restart__button {
+        padding: 10px 15px;
+        font-size: 0.8em;
+        width: auto;
+        max-width: 150px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
